@@ -15,13 +15,22 @@
     "IN_REVIEW": "En revue",
     "DONE": "Terminée"
   },
+    "filters": {
+    "label": "Filtres",
+    "status": "Statut",
+    "member": "Membre",
+    "allStatuses": "Tous les statuts",
+    "allMembers": "Tous les membres",
+    "reset": "Réinitialiser"
+  },
   "tasks": {
     "title": "Liste des tâches",
     "loading": "Chargement des tâches…",
     "error": "Impossible de charger les tâches : {{message}}",
     "empty": "Aucune tâche pour le moment.",
     "noDueDate": "sans échéance",
-    "detailTitle": "Fiche de la tâche {{id}}"
+    "detailTitle": "Fiche de la tâche {{id}}",
+    "noMatch": "Aucune tâche ne correspond aux filtres."
   },
   "kanban": {
     "title": "Tableau Kanban"
