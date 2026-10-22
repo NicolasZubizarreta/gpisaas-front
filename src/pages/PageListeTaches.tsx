@@ -13,17 +13,21 @@ export function PageListeTaches() {
   return (
     <>
       <h1>Liste des tâches</h1>
-      <ul>
-        {taches?.map((tache) => (
-          <li key={tache.id}>
-            <Link to={`/taches/${tache.id}`}>{tache.titre}</Link>
-            {' — '}
-            {libellesStatut[tache.statut]}
-            {' — '}
-            {tache.echeance ?? 'sans échéance'}
-          </li>
-        ))}
-      </ul>
+      {taches?.length === 0 ? (
+        <p>Aucune tâche pour le moment.</p>
+      ) : (
+        <ul>
+          {taches?.map((tache) => (
+            <li key={tache.id}>
+              <Link to={`/taches/${tache.id}`}>{tache.titre}</Link>
+              {' — '}
+              {libellesStatut[tache.statut]}
+              {' — '}
+              {tache.echeance ?? 'sans échéance'}
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   )
 }
