@@ -1,1 +1,90 @@
-{ "taches": [], "projets": [], "membres": [], "idees": [] }
+{
+  "membres": [
+    { "id": "m1", "nom": "Inès Morel" },
+    { "id": "m2", "nom": "Hugo Lefèvre" },
+    { "id": "m3", "nom": "Sarah Benali" }
+  ],
+  "projets": [
+    { "id": "p1", "nom": "Refonte du site" },
+    { "id": "p2", "nom": "Application mobile" }
+  ],
+  "taches": [
+    {
+      "id": "t1",
+      "titre": "Maquetter le Kanban",
+      "statut": "EN_COURS",
+      "echeance": "2026-11-02",
+      "description": "Dessiner les colonnes par statut et les cartes de tâches.",
+      "projetId": "p1",
+      "membreId": "m1"
+    },
+    {
+      "id": "t2",
+      "titre": "Rédiger le cahier des charges",
+      "statut": "TERMINEE",
+      "echeance": "2026-10-15",
+      "description": "Décrire le périmètre et les parcours utilisateurs.",
+      "projetId": "p1",
+      "membreId": "m2"
+    },
+    {
+      "id": "t3",
+      "titre": "Configurer l'intégration continue",
+      "statut": "A_FAIRE",
+      "echeance": null,
+      "description": "Lancer le lint et le build à chaque pull request.",
+      "projetId": "p1",
+      "membreId": null
+    },
+    {
+      "id": "t4",
+      "titre": "Concevoir le modèle de données",
+      "statut": "EN_REVUE",
+      "echeance": "2026-10-30",
+      "description": "Prévoir l'arborescence de sous-tâches sans limite de profondeur.",
+      "projetId": "p1",
+      "membreId": "m3"
+    },
+    {
+      "id": "t5",
+      "titre": "Créer l'écran de connexion",
+      "statut": "A_FAIRE",
+      "echeance": "2026-11-10",
+      "description": "Formulaire de connexion avec validation des champs.",
+      "projetId": "p2",
+      "membreId": "m1"
+    },
+    {
+      "id": "t6",
+      "titre": "Tester la synchronisation hors ligne",
+      "statut": "A_FAIRE",
+      "echeance": "2026-11-20",
+      "description": "Vérifier la reprise de la capture d'idées après reconnexion.",
+      "projetId": "p2",
+      "membreId": "m2"
+    },
+    {
+      "id": "t7",
+      "titre": "Choisir la bibliothèque de graphiques",
+      "statut": "EN_COURS",
+      "echeance": null,
+      "description": "Comparer deux solutions pour le tableau de bord.",
+      "projetId": "p2",
+      "membreId": "m3"
+    },
+    {
+      "id": "t8",
+      "titre": "Préparer la démonstration",
+      "statut": "A_FAIRE",
+      "echeance": "2026-11-18",
+      "description": "Scénario de démonstration du parcours principal.",
+      "projetId": "p2",
+      "membreId": "m2"
+    }
+  ],
+  "idees": [
+    { "id": "i1", "texte": "Raccourci clavier pour capturer une idée" },
+    { "id": "i2", "texte": "Exporter le rapport de temps en PDF" },
+    { "id": "i3", "texte": "Notifications par e-mail pour les échéances" }
+  ]
+}
