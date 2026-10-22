@@ -1,4 +1,6 @@
-export type Status = 'TODO' | 'IN_PROGRESS' | 'IN_REVIEW' | 'DONE'
+export const STATUSES = ['TODO', 'IN_PROGRESS', 'IN_REVIEW', 'DONE'] as const
+
+export type Status = (typeof STATUSES)[number]
 
 export type Task = {
   id: string
