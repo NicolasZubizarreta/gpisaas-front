@@ -1,3 +1,7 @@
+import { useTranslation } from 'react-i18next'
+
 export function KanbanPage() {
-  return <h1>Tableau Kanban</h1>
+  const { t } = useTranslation()
+
+  return <h1>{t('kanban.title')}</h1>
 }

@@ -1,3 +1,7 @@
+import { useTranslation } from 'react-i18next'
+
 export function MyTodoPage() {
-  return <h1>Ma to-do</h1>
+  const { t } = useTranslation()
+
+  return <h1>{t('myTodo.title')}</h1>
 }

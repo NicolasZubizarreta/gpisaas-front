@@ -1,29 +1,30 @@
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import { useFetch } from '../hooks/useFetch'
-import { statusLabels } from '../labels'
 import { API_URL } from '../services/api'
 import type { Task } from '../types'
 
 export function TaskListPage() {
+  const { t } = useTranslation()
   const { data: tasks, loading, error } = useFetch<Task[]>(`${API_URL}/tasks`)
 
-  if (loading) return <p>Chargement des tâches…</p>
-  if (error) return <p>Impossible de charger les tâches : {error.message}</p>
+  if (loading) return <p>{t('tasks.loading')}</p>
+  if (error) return <p>{t('tasks.error', { message: error.message })}</p>
 
   return (
     <>
-      <h1>Liste des tâches</h1>
+      <h1>{t('tasks.title')}</h1>
       {tasks?.length === 0 ? (
-        <p>Aucune tâche pour le moment.</p>
+        <p>{t('tasks.empty')}</p>
       ) : (
         <ul>
           {tasks?.map((task) => (
             <li key={task.id}>
               <Link to={`/tasks/${task.id}`}>{task.title}</Link>
               {' — '}
-              {statusLabels[task.status]}
+              {t(`status.${task.status}`)}
               {' — '}
-              {task.dueDate ?? 'sans échéance'}
+              {task.dueDate ?? t('tasks.noDueDate')}
             </li>
           ))}
         </ul>

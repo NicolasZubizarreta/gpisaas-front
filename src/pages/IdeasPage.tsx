@@ -1,3 +1,7 @@
+import { useTranslation } from 'react-i18next'
+
 export function IdeasPage() {
-  return <h1>Backlog d'idées</h1>
+  const { t } = useTranslation()
+
+  return <h1>{t('ideas.title')}</h1>
 }
