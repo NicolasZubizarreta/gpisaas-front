@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "label": "Main navigation",
+    "tasks": "Tasks",
+    "kanban": "Kanban",
+    "ideas": "Ideas",
+    "myTodo": "My to-do"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "status": {
+    "TODO": "To do",
+    "IN_PROGRESS": "In progress",
+    "IN_REVIEW": "In review",
+    "DONE": "Done"
+  },
+    "filters": {
+    "label": "Filters",
+    "status": "Status",
+    "member": "Member",
+    "allStatuses": "All statuses",
+    "allMembers": "All members",
+    "reset": "Reset"
+  },
+  "tasks": {
+    "title": "Task list",
+    "loading": "Loading tasks…",
+    "error": "Unable to load tasks: {{message}}",
+    "empty": "No tasks yet.",
+    "noDueDate": "no due date",
+    "detailTitle": "Task {{id}}",
+    "noMatch": "No task matches the filters."
+  },
+  "kanban": {
+    "title": "Kanban board"
+  },
+  "ideas": {
+    "title": "Idea backlog"
+  },
+  "myTodo": {
+    "title": "My to-do"
+  }
+}

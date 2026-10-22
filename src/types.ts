@@ -1,26 +1,28 @@
-export type Statut = 'A_FAIRE' | 'EN_COURS' | 'EN_REVUE' | 'TERMINEE'
+export const STATUSES = ['TODO', 'IN_PROGRESS', 'IN_REVIEW', 'DONE'] as const
 
-export type Tache = {
+export type Status = (typeof STATUSES)[number]
+
+export type Task = {
   id: string
-  titre: string
-  statut: Statut
-  echeance: string | null
+  title: string
+  status: Status
+  dueDate: string | null
   description: string
-  projetId: string
-  membreId: string | null
+  projectId: string
+  memberId: string | null
 }
 
-export type Projet = {
+export type Project = {
   id: string
-  nom: string
+  name: string
 }
 
-export type Membre = {
+export type Member = {
   id: string
-  nom: string
+  name: string
 }
 
-export type Idee = {
+export type Idea = {
   id: string
-  texte: string
+  text: string
 }
