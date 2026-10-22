@@ -4,7 +4,7 @@ export type Tache = {
   id: string
   titre: string
   statut: Statut
-  echeance: string
+  echeance: string | null
   projetId: string
   membreId: string | null
 }
