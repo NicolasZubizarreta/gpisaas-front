@@ -5,6 +5,7 @@ export type Tache = {
   titre: string
   statut: Statut
   echeance: string | null
+  description: string
   projetId: string
   membreId: string | null
 }
