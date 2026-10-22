@@ -1,11 +1,11 @@
 import { Link } from 'react-router'
 import { useFetch } from '../hooks/useFetch'
-import { libellesStatut } from '../libelles'
+import { statusLabels } from '../labels'
 import { API_URL } from '../services/api'
-import type { Tache } from '../types'
+import type { Task } from '../types'
 
-export function PageListeTaches() {
-  const { data: taches, loading, error } = useFetch<Tache[]>(`${API_URL}/taches`)
+export function TaskListPage() {
+  const { data: tasks, loading, error } = useFetch<Task[]>(`${API_URL}/tasks`)
 
   if (loading) return <p>Chargement des tâches…</p>
   if (error) return <p>Impossible de charger les tâches : {error.message}</p>
@@ -13,17 +13,17 @@ export function PageListeTaches() {
   return (
     <>
       <h1>Liste des tâches</h1>
-      {taches?.length === 0 ? (
+      {tasks?.length === 0 ? (
         <p>Aucune tâche pour le moment.</p>
       ) : (
         <ul>
-          {taches?.map((tache) => (
-            <li key={tache.id}>
-              <Link to={`/taches/${tache.id}`}>{tache.titre}</Link>
+          {tasks?.map((task) => (
+            <li key={task.id}>
+              <Link to={`/tasks/${task.id}`}>{task.title}</Link>
               {' — '}
-              {libellesStatut[tache.statut]}
+              {statusLabels[task.status]}
               {' — '}
-              {tache.echeance ?? 'sans échéance'}
+              {task.dueDate ?? 'sans échéance'}
             </li>
           ))}
         </ul>

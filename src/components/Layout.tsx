@@ -5,10 +5,10 @@ export function Layout() {
     <>
       <header>
         <nav aria-label="Navigation principale">
-          <NavLink to="/taches">Tâches</NavLink>{' '}
+          <NavLink to="/tasks">Tâches</NavLink>{' '}
           <NavLink to="/kanban">Kanban</NavLink>{' '}
-          <NavLink to="/idees">Idées</NavLink>{' '}
-          <NavLink to="/ma-todo">Ma to-do</NavLink>
+          <NavLink to="/ideas">Idées</NavLink>{' '}
+          <NavLink to="/my-todo">Ma to-do</NavLink>
         </nav>
       </header>
       <main>

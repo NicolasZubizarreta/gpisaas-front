@@ -1,37 +1,37 @@
 import { useEffect, useState } from 'react'
 
-type Resultat<T> = {
+type Result<T> = {
   url: string
   data: T | null
   error: Error | null
 }
 
 export function useFetch<T>(url: string) {
-  const [resultat, setResultat] = useState<Resultat<T> | null>(null)
+  const [result, setResult] = useState<Result<T> | null>(null)
 
   useEffect(() => {
     const controller = new AbortController()
 
     fetch(url, { signal: controller.signal })
-      .then((reponse) => {
-        if (!reponse.ok) throw new Error(`HTTP ${reponse.status}`)
-        return reponse.json() as Promise<T>
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`)
+        return response.json() as Promise<T>
       })
-      .then((data) => setResultat({ url, data, error: null }))
+      .then((data) => setResult({ url, data, error: null }))
       .catch((error: Error) => {
         if (error.name !== 'AbortError') {
-          setResultat({ url, data: null, error })
+          setResult({ url, data: null, error })
         }
       })
 
     return () => controller.abort()
   }, [url])
 
-  const aJour = resultat !== null && resultat.url === url
+  const isCurrent = result !== null && result.url === url
 
   return {
-    data: aJour ? resultat.data : null,
-    error: aJour ? resultat.error : null,
-    loading: !aJour,
+    data: isCurrent ? result.data : null,
+    error: isCurrent ? result.error : null,
+    loading: !isCurrent,
   }
 }
