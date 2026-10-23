@@ -15,12 +15,13 @@
     "IN_REVIEW": "In review",
     "DONE": "Done"
   },
-    "filters": {
+  "filters": {
     "label": "Filters",
     "status": "Status",
     "member": "Member",
     "allStatuses": "All statuses",
     "allMembers": "All members",
+    "search": "Search",
     "reset": "Reset"
   },
   "tasks": {
@@ -28,9 +29,9 @@
     "loading": "Loading tasks…",
     "error": "Unable to load tasks: {{message}}",
     "empty": "No tasks yet.",
+    "noMatch": "No task matches the filters.",
     "noDueDate": "no due date",
-    "detailTitle": "Task {{id}}",
-    "noMatch": "No task matches the filters."
+    "detailTitle": "Task {{id}}"
   },
   "kanban": {
     "title": "Kanban board"
