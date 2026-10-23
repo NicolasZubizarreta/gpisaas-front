@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import { FilterBar } from '../components/FilterBar'
+import { useDebounce } from '../hooks/useDebounce'
 import { useFetch } from '../hooks/useFetch'
 import { useFilters } from '../hooks/useFilters'
 import { API_URL } from '../services/api'
@@ -10,12 +11,13 @@ import { filterTasks } from '../utils/filterTasks'
 export function TaskListPage() {
   const { t } = useTranslation()
   const filters = useFilters()
+  const debouncedSearch = useDebounce(filters.search, 300)
   const { data: tasks, loading, error } = useFetch<Task[]>(`${API_URL}/tasks`)
 
   if (loading) return <p>{t('tasks.loading')}</p>
   if (error) return <p>{t('tasks.error', { message: error.message })}</p>
 
-  const filteredTasks = filterTasks(tasks ?? [], filters)
+  const filteredTasks = filterTasks(tasks ?? [], { ...filters, search: debouncedSearch })
 
   return (
     <>

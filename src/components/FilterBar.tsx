@@ -45,6 +45,14 @@ export function FilterBar() {
           ))}
         </select>
       </label>
+      <label>
+        {t('filters.search')}
+        <input
+          type="search"
+          value={filters.search}
+          onChange={(event) => dispatch({ type: 'setSearch', search: event.target.value })}
+        />
+      </label>
       <button type="button" onClick={() => dispatch({ type: 'reset' })}>
         {t('filters.reset')}
       </button>
